@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { notFound } from 'next/navigation';
 import path from 'path';
 
 type PostMetadata = {
@@ -44,38 +45,46 @@ export function getPostSlugs() {
 }
 
 export function getSortedPosts(): Post[] {
-  const slugs = getPostSlugs();
-  const posts = slugs.map(slug => {
-  const fullPath = path.join(postsDir, `${slug}/content.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { metadata, content } = parsePost(fileContents);
-  const processedContent = processPostImages(slug, content);
+  try {
+    const slugs = getPostSlugs();
+    const posts = slugs.map(slug => {
+      const fullPath = path.join(postsDir, `${slug}/content.md`);
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const { metadata, content } = parsePost(fileContents);
+      const processedContent = processPostImages(slug, content);
 
-  return {
-    slug,
-    content: processedContent,
-    metadata,
-  };
-});
+      return {
+        slug,
+        content: processedContent,
+        metadata,
+      };
+    });
 
-  return posts.sort((a, b) => {
-    const dateA = new Date(a.metadata.date);
-    const dateB = new Date(b.metadata.date);
-    return dateB.getTime() - dateA.getTime();
-  });
+    return posts.sort((a, b) => {
+      const dateA = new Date(a.metadata.date);
+      const dateB = new Date(b.metadata.date);
+      return dateB.getTime() - dateA.getTime();
+    });
+  } catch(_) {
+    return [];
+  }
 }
 
 export function getPostBySlug(slug: string): Post {
-  const fullPath = path.join(postsDir, `${slug}/content.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { metadata, content } = parsePost(fileContents);
-  const processedContent = processPostImages(slug, content);
+  try {
+    const fullPath = path.join(postsDir, `${slug}/content.md`);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { metadata, content } = parsePost(fileContents);
+    const processedContent = processPostImages(slug, content);
 
-  return {
-    slug,
-    content: processedContent,
-    metadata,
-  };
+    return {
+      slug,
+      content: processedContent,
+      metadata,
+    };
+  } catch(_) {
+    notFound();
+  }
 }
 
 export function getPostsWithTag(tag: string): Post[] {

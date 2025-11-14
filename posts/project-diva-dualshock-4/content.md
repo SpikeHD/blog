@@ -2,6 +2,7 @@
 title: Building the Ultimate Dualshock 4 (for Rhythm Games)
 date: 2025-05-12
 tags: hardware, projects
+visibility: public
 ---
 
 I would venture to say that the Dualshock 4 is the perfect controller with no flaws... except for it's two flaws:

@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
+import { SiGithub } from "@icons-pack/react-simple-icons"
 import { Header } from "./components/header";
+
+import "./globals.css";
+import Link from "next/link";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -28,15 +31,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${poppinsMono.variable} antialiased`}
+        className={`${poppins.variable} ${poppinsMono.variable} antialiased w-screen h-screen`}
       >
-        <div className="flex items-center justify-center">
-          <div className="flex flex-col w-4xl">
-            <Header />
+        <div className="flex items-start justify-center w-full h-full">
+          <div className="flex flex-col w-4xl h-full">
+            <div className="flex flex-row h-full">
+              <div className="w-1/4 h-full pr-8">
+                <Header />
 
-            <main>
-              {children}
-            </main>
+                <p className="mt-4 text-center">
+                  A blog about software, hardware, and also neither of those things sometimes.
+                </p>
+
+                <div className="mt-8 flex flex-row justify-center">
+                  <Link href="https://github.com/SpikeHD" target="_blank" rel="noopener noreferrer">
+                    <SiGithub />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="w-3/4 pl-8 pr-4 border-l border-accent border-dashed overflow-y-scroll">
+                {children}
+              </div>
+            </div>
           </div>
         </div>
       </body>
