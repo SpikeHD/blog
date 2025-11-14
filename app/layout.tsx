@@ -36,17 +36,25 @@ export default function RootLayout({
         <div className="flex items-start justify-center w-full h-full">
           <div className="flex flex-col w-4xl h-full">
             <div className="flex flex-row h-full">
-              <div className="w-1/4 h-full pr-8">
-                <Header />
+              <div className="flex flex-col justify-between w-1/4 h-full pr-8">
+                <div>
+                  <Header />
 
-                <p className="mt-4 text-center">
-                  A blog about software, hardware, and also neither of those things sometimes.
-                </p>
+                  <p className="mt-4 text-center">
+                    A blog about software, hardware, and also neither of those things sometimes.
+                  </p>
 
-                <div className="mt-8 flex flex-row justify-center">
-                  <Link href="https://github.com/SpikeHD" target="_blank" rel="noopener noreferrer">
-                    <SiGithub />
-                  </Link>
+                  <div className="mt-8 flex flex-row justify-center">
+                    <Link href="https://github.com/SpikeHD" target="_blank" rel="noopener noreferrer">
+                      <SiGithub />
+                    </Link>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="mb-4 text-center text-xs italic">
+                    The written contents of this blog are not - in any way - written by generative AI.
+                  </p>
                 </div>
               </div>
 
