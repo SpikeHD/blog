@@ -53,7 +53,7 @@ export default function RootLayout({
 
                 <div>
                   <p className="mb-4 text-center text-xs italic">
-                    The written contents of this blog are not - in any way - written by generative AI.
+                    The written contents of this blog are not - in any way - created using generative AI.
                   </p>
                 </div>
               </div>
