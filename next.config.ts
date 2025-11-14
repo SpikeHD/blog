@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
       new URL("https://avatars.githubusercontent.com/**?v=4"),
       new URL("https://http.cat/**")
     ]
-  }
+  },
+  output: "export"
 };
 
 export default nextConfig;

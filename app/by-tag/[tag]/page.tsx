@@ -1,6 +1,11 @@
 import PostList from "@/app/components/post-list";
-import { getPostsWithTag } from "@/app/util/posts";
+import { getAllUniqueTags, getPostsWithTag } from "@/app/util/posts";
 import Link from "next/link";
+
+export function generateStaticParams() {
+  const tags = getAllUniqueTags();
+  return tags.map((tag) => ({ tag }));
+}
 
 export default async function ByTagPage({ params }: {
   params: Promise<{ tag: string }>

@@ -41,7 +41,9 @@ function parsePost(contents: string): { metadata: PostMetadata; content: string 
 }
 
 export function getPostSlugs() {
-  return fs.readdirSync(postsDir);
+  return fs.readdirSync(postsDir, {
+    withFileTypes: true,
+  }).filter(dirent => dirent.isDirectory()).map(dirent => dirent.name);
 }
 
 export function getSortedPosts(): Post[] {

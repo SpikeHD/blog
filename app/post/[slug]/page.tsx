@@ -1,9 +1,14 @@
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { getPostBySlug } from "@/app/util/posts";
+import { getPostBySlug, getSortedPosts } from "@/app/util/posts";
 import { Divider } from "@/app/components/divider";
 import { Tag } from "@/app/components/tag";
 import Link from "next/link";
+
+export function generateStaticParams() {
+  const posts = getSortedPosts();
+  return posts.map((post) => ({ slug: post.slug }));
+}
 
 export default async function Post({
   params,
@@ -38,7 +43,7 @@ export default async function Post({
             <Tag key={idx} name={tag} />
           ))}
         </div>
-      </div>    </div>
-
+      </div>
+    </div>
   );
 }
