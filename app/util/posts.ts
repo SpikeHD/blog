@@ -65,7 +65,8 @@ export function getSortedPosts(): Post[] {
       const dateB = new Date(b.metadata.date);
       return dateB.getTime() - dateA.getTime();
     });
-  } catch(_) {
+  } catch(e) {
+    console.error(e);
     return [];
   }
 }
@@ -82,7 +83,8 @@ export function getPostBySlug(slug: string): Post {
       content: processedContent,
       metadata,
     };
-  } catch(_) {
+  } catch(e) {
+    console.error(e);
     notFound();
   }
 }
