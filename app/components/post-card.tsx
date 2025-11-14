@@ -12,7 +12,7 @@ export default function PostCard({ post }: { post: Post}) {
         text-foreground
         no-underline
         w-full
-        mb-10
+        mb-4
         p-4
         rounded-xl
         border
