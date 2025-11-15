@@ -21,6 +21,9 @@ const poppinsMono = Poppins({
 export const metadata: Metadata = {
   title: "SpikeHD's Evil Hell World",
   description: "A blog.",
+  icons: {
+    icon: "/favicon.ico",
+  }
 };
 
 export default function RootLayout({

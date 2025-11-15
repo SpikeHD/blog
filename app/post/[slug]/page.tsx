@@ -5,10 +5,20 @@ import { getPostBySlug, getSortedPosts } from "@/app/util/posts";
 import { Divider } from "@/app/components/divider";
 import { Tag } from "@/app/components/tag";
 import Link from "next/link";
+import { Metadata } from "next";
 
 export function generateStaticParams() {
   const posts = getSortedPosts();
   return posts.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+  return {
+    title: post.metadata.title,
+    description: post.content.slice(0, 160).replace(/\n/g, ' '),
+  };
 }
 
 export default async function Post({
