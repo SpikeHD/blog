@@ -107,4 +107,22 @@
   ol li {
     margin-left: 1.5rem;
   }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+
+    border: 1px solid var(--foreground);
+  }
+
+  table td {
+    padding: 4px 8px;
+    border-right: 1px solid var(--foreground);
+  }
+
+  table thead {
+    border-bottom: 1px solid var(--foreground);
+  }
 }

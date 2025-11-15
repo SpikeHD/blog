@@ -102,6 +102,23 @@ If you are or were a user of Dorion, thanks! I hope you liked it. If you didn't,
 Thank you to everyone that has contributed to Dorion, whether that was code or with package maintenance or [that one guy that helped make the current icon](https://github.com/SpikeHD/Dorion/pull/235).
 I hope I can make things that are even more interesting and useful for the world in the future.
 
+# Numbers and Metrics
+
+Mmm... metrics...
+
+| Metric | Amount |
+|-|-|
+| Downloads (all versions) | 64,920 |
+| Published versions | 76 |
+| Contributors | 16 |
+| Commits | 1,458 |
+| Commits (mine only) | 1,294 |
+| Most active week[^8] | Week of October 30th, 2023 (70 commits) |
+| Total actions runs (last year) | 2,683 |
+| Total actions minutes (last year) | 15,523 minutes (258.7 hours) |
+| Average actions runtime (last year) | 5m 15s |
+| Worst platform to use Dorion on | Linux |
+
 [^1]: well, maybe not in today's job market unfortuntely
 [^2]: https://old.reddit.com/r/windows7/comments/1agt43b/any_workarounds/kor4zg1/
 [^3]: https://github.com/SpikeHD/Dorion/issues/9 (and a few others)
@@ -109,3 +126,4 @@ I hope I can make things that are even more interesting and useful for the world
 [^5]: yes i know this issue is closed now, at the time i didn't use linux like, ever, and didn't test fully if it had *actually* worked, which it didn't
 [^6]: i mean just look at the issues section. i even used to have a personal goal to keep the list under 20 open issues at a time which... i've now failed at
 [^7]: i'm literally only alchemist 2 or something, my wraith is electric though
+[^8]: as in, week with the most commits pushed

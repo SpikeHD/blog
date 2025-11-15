@@ -57,7 +57,7 @@ export default function RootLayout({
                 </div>
 
                 <div>
-                  <p className="mb-4 text-center text-xs italic hidden lg:block">
+                  <p className="my-4 text-center text-xs italic hidden lg:block">
                     The written contents of this blog are not - in any way - created using generative AI. Thoughts are my own etc. etc.
                   </p>
                 </div>
