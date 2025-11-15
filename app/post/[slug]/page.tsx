@@ -1,5 +1,6 @@
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 import { getPostBySlug, getSortedPosts } from "@/app/util/posts";
 import { Divider } from "@/app/components/divider";
 import { Tag } from "@/app/components/tag";
@@ -26,12 +27,15 @@ export default async function Post({
 
       <div className="py-8">
         <h1>{post.metadata.title}</h1>
-        <p className="text-sm text-accent">{new Date(post.metadata.date).toLocaleDateString()}</p>
+        <p className="flex flex-row justify-between text-sm text-accent">
+          <span>{new Date(post.metadata.date).toLocaleDateString()}</span>
+          <a className="underline font-bold" href={`https://github.com/SpikeHD/blog/commits/main/posts/${slug}/content.md`}>View revision history</a>
+        </p>
 
         <Divider />
 
         <div className="markdown">
-          <Markdown remarkPlugins={[remarkGfm]}>
+          <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
             {post.content}
           </Markdown>
         </div>

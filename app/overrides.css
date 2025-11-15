@@ -3,7 +3,8 @@
 }
 
 .markdown p {
-  margin: 12px 0px;
+  margin: 24px 0px;
+  line-height: 1.6;
 }
 
 .markdown a {
@@ -13,6 +14,36 @@
 
 .markdown a:hover {
   color: var(--secondary);
+}
+
+.markdown #footnote-label {
+  display: none;
+}
+
+.markdown .footnotes {
+  font-size: var(--text-xs);
+  filter: brightness(0.8);
+  transition: filter 0.3s ease;
+}
+
+.markdown .footnotes:hover {
+  filter: brightness(1);
+}
+
+.markdown .footnotes p {
+  margin: 8px 0;
+}
+
+.markdown [aria-describedby="footnote-label"] {
+  margin: 0 1px;
+}
+
+.markdown [aria-describedby="footnote-label"]::before {
+  content: "[";
+}
+
+.markdown [aria-describedby="footnote-label"]::after {
+  content: "]";
 }
 
 @layer base {

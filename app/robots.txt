@@ -1,0 +1,59 @@
+User-agent: GPTBot
+Disallow: /
+User-agent: ChatGPT-User
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: PerplexityBot
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
+‍User-agent: Claude-Web
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+# OpenAI
+User-agent: GPTBot
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+# Google
+User-agent: Google-Extended
+Disallow: /
+
+# Anthropic
+User-agent: Claude-Web
+Disallow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Disallow: /
+
+# Amazon / AGI
+User-agent: Amazonbot
+Disallow: /
+
+# Meta
+User-agent: Meta-External-Agent
+Disallow: /
+
+# Apple
+User-agent: Applebot-Extended
+Disallow: /
+
+# Common scrapers
+User-agent: CCBot
+Disallow: /
+
+User-agent: FacebookExternalHit
+Disallow: /
+
+User-agent: Twitterbot
+Disallow: /
+
+User-agent: bingbot
+Disallow: /
