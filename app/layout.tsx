@@ -32,20 +32,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${poppinsMono.variable} antialiased w-screen h-screen`}
+        className={`${poppins.variable} ${poppinsMono.variable} antialiased w-screen h-screen overflow-hidden`}
       >
         <div className="flex items-start justify-center w-full h-full">
-          <div className="flex flex-col w-4xl h-full">
-            <div className="flex flex-row h-full">
-              <div className="flex flex-col justify-between w-1/4 h-full pr-8">
+          <div className="flex flex-col w-full max-w-4xl h-full">
+            <div className="flex flex-col lg:flex-row h-full min-h-0">
+              <div className="flex flex-col justify-between w-full lg:w-1/4 lg:h-full px-4 lg:pr-8 pb-4 lg:pb-0 flex-shrink-0">
                 <div>
                   <Header />
 
-                  <p className="mt-4 text-center">
+                  <p className="mt-4 text-center text-sm lg:text-base">
                     A blog about software, hardware, and also neither of those things sometimes.
                   </p>
 
-                  <div className="mt-8 flex flex-row justify-center">
+                  <div className="mt-4 lg:mt-8 flex flex-row justify-center">
                     <Link className="mx-1" href="https://github.com/SpikeHD" target="_blank" rel="noopener noreferrer">
                       <SiGithub />
                     </Link>
@@ -57,13 +57,13 @@ export default function RootLayout({
                 </div>
 
                 <div>
-                  <p className="mb-4 text-center text-xs italic">
+                  <p className="mb-4 text-center text-xs italic hidden lg:block">
                     The written contents of this blog are not - in any way - created using generative AI. Thoughts are my own etc. etc.
                   </p>
                 </div>
               </div>
 
-              <div className="w-3/4 pl-8 pr-4 border-l border-accent border-dashed overflow-y-scroll">
+              <div className="w-full lg:w-3/4 px-4 lg:pl-8 lg:pr-4 lg:border-l border-accent border-dashed overflow-y-auto flex-1 min-h-0">
                 {children}
               </div>
             </div>
