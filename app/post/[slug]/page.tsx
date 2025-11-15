@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: post.metadata.title,
     description: post.content.slice(0, 160).replace(/\n/g, ' '),
     icons: {
-      icon: '/favicon.ico',
+      icon: "https://avatars.githubusercontent.com/u/25207995?v=4",
     }
   };
 }

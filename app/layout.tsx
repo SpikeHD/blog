@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: "SpikeHD's Evil Hell World",
   description: "A blog.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "https://avatars.githubusercontent.com/u/25207995?v=4",
   }
 };
 
