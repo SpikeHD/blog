@@ -1,11 +1,12 @@
+import { Metadata } from "next";
+import Link from "next/link";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
+import removeMarkdown from "remove-markdown";
 import { getPostBySlug, getSortedPosts } from "@/app/util/posts";
 import { Divider } from "@/app/components/divider";
 import { Tag } from "@/app/components/tag";
-import Link from "next/link";
-import { Metadata } from "next";
 
 export function generateStaticParams() {
   const posts = getSortedPosts();
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getPostBySlug(slug);
   return {
     title: post.metadata.title,
-    description: post.content.slice(0, 160).replace(/\n/g, ' '),
+    description: removeMarkdown(post.content.slice(0, 160)).replace(/\n/g, ' '),
   };
 }
 
