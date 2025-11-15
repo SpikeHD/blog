@@ -83,7 +83,7 @@ The problem became that:
 
 1. Webview limitations were making it so simple features took a shit-ton of work
 2. The work I *could* put in was for stuff I personally didn't need
-3. I have a real life where I want do real things, and Dorion plummeted quite far down that list
+3. I have a real life where I want do many things, and Dorion plummeted quite far down that list
 
 ...and that problem has not yet gone away.
 
