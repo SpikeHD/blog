@@ -24,7 +24,7 @@ In this post I want to take you through the (short, I promise) history of Dorion
 Yep. I'm a fraud. A thief. A depraved idea stealer some might say.
 
 Before working on Dorion, I was a part of [a team developing Genshin Impact private server software](https://github.com/grasscutters), a role I had fun with for
-a game I desperately wish I could get my time back from. I wrote a launcher comprised of some of the worst code I'd ever written, they saw it and asked if I wanted
+a game I desperately wish I could get my time back from. I wrote a launcher comprised of some of the worst code I'd ever written, then they saw it and asked if I wanted
 to make an new launcher with them, so I helped write a second launcher using the [Tauri](github.com/tauri-apps/) library comprised of the second-worst code I'd ever written[^4].
 
 After writing that project and understanding how Tauri worked, someone I was aquainted with mentioned how it might be interesting to make a Discord client using.
