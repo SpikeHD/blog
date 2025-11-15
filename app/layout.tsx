@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Poppins } from "next/font/google";
+import { Globe } from "lucide-react";
 import { SiGithub } from "@icons-pack/react-simple-icons"
 import { Header } from "./components/header";
 
 import "./globals.css";
-import Link from "next/link";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -45,8 +46,12 @@ export default function RootLayout({
                   </p>
 
                   <div className="mt-8 flex flex-row justify-center">
-                    <Link href="https://github.com/SpikeHD" target="_blank" rel="noopener noreferrer">
+                    <Link className="mx-1" href="https://github.com/SpikeHD" target="_blank" rel="noopener noreferrer">
                       <SiGithub />
+                    </Link>
+
+                    <Link className="mx-1" href="https://spikehd.dev" target="_blank" rel="noopener noreferrer">
+                      <Globe />
                     </Link>
                   </div>
                 </div>
