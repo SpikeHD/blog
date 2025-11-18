@@ -1,7 +1,6 @@
 import { BackToHome } from "@/app/components/back-to-home";
 import PostList from "@/app/components/post-list";
 import { getAllUniqueTags, getPostsWithTag } from "@/app/util/posts";
-import Link from "next/link";
 
 export function generateStaticParams() {
   const tags = getAllUniqueTags();
