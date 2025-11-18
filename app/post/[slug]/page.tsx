@@ -7,6 +7,7 @@ import removeMarkdown from "remove-markdown";
 import { getPostBySlug, getSortedPosts } from "@/app/util/posts";
 import { Divider } from "@/app/components/divider";
 import { Tag } from "@/app/components/tag";
+import { BackToHome } from "@/app/components/back-to-home";
 
 export function generateStaticParams() {
   const posts = getSortedPosts();
@@ -32,9 +33,7 @@ export default async function Post({
 
   return (
     <div>
-      <Link href="/" className="text-sm text-primary hover:underline">
-        &lt; back to home
-      </Link>
+      <BackToHome />
 
       <div className="py-8">
         <h1>{post.metadata.title}</h1>

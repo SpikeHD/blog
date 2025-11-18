@@ -1,3 +1,4 @@
+import { BackToHome } from "@/app/components/back-to-home";
 import PostList from "@/app/components/post-list";
 import { getAllUniqueTags, getPostsWithTag } from "@/app/util/posts";
 import Link from "next/link";
@@ -15,9 +16,7 @@ export default async function ByTagPage({ params }: {
 
   return (
     <div>
-      <Link href="/" className="text-sm text-primary hover:underline">
-        &lt; back to home
-      </Link>
+      <BackToHome />
 
       <div className="py-8">
         <p className="pb-4">
