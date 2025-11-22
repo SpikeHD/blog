@@ -7,6 +7,7 @@ type PostMetadata = {
   title: string;
   date: string;
   tags?: string[];
+  visible: string;
 }
 
 export type Post = {
@@ -25,6 +26,7 @@ function parsePost(contents: string): { metadata: PostMetadata; content: string 
   const metadata: PostMetadata = {
     title: "N/A",
     date: "N/A",
+    visible: "false",
   };
   metadataLines.forEach(line => {
     const [key, ...rest] = line.split(':');
@@ -60,7 +62,7 @@ export function getSortedPosts(): Post[] {
         content: processedContent,
         metadata,
       };
-    });
+    }).filter(post => post.metadata.visible === 'true');
 
     return posts.sort((a, b) => {
       const dateA = new Date(a.metadata.date);
@@ -127,7 +129,14 @@ export function processPostImages(slug: string, content: string): string {
   });
 
   // Process markdown content to update relative image paths
-  return content.replace(/!\[([^\]]*)\]\(\.\/([^)]+)\)/g, (match, alt, imagePath) => {
+  let processedContent = content.replace(/!\[([^\]]*)\]\(\.\/([^)]+)\)/g, (match, alt, imagePath) => {
     return `![${alt}](/posts/${slug}/${imagePath})`;
   });
+
+  // Also process HTML img tags with relative src paths
+  processedContent = processedContent.replace(/<img([^>]*)\ssrc=["']\.\/([^"']+)["']([^>]*)>/g, (match, beforeSrc, imagePath, afterSrc) => {
+    return `<img${beforeSrc} src="/posts/${slug}/${imagePath}"${afterSrc}>`;
+  });
+
+  return processedContent;
 }

@@ -2,6 +2,7 @@
 title: A Dorion Retrospective
 date: 2025-11-14
 tags: ramblings
+visible: true
 ---
 *Don't know what Dorion is? Take a look at the [GitHub repository](https://github.com/SpikeHD/Dorion)!*
 
