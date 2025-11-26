@@ -9,7 +9,7 @@ type PostMetadata = {
   date: string;
   tags?: string[];
   visible: string;
-  estTime?: string;
+  estTime: string;
 }
 
 export type Post = {
@@ -29,6 +29,7 @@ function parsePost(contents: string): { metadata: PostMetadata; content: string 
     title: "N/A",
     date: "N/A",
     visible: "false",
+    estTime: "N/A",
   };
   metadataLines.forEach(line => {
     const [key, ...rest] = line.split(':');

@@ -6,6 +6,7 @@ import { SiGithub } from "@icons-pack/react-simple-icons"
 import { Header } from "./components/header";
 
 import "./globals.css";
+import { SITE_DESCRIPTION, SITE_NAME } from "./constants";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -20,8 +21,8 @@ const poppinsMono = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "SpikeHD's Evil Hell World",
-  description: "A blog about software, hardware, and also neither of those things sometimes.",
+  title: SITE_NAME,
+  description: SITE_DESCRIPTION,
 };
 
 export default function RootLayout({

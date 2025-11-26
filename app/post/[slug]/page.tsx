@@ -7,6 +7,7 @@ import { getPostBySlug, getSortedPosts } from "@/app/util/posts";
 import { Divider } from "@/app/components/divider";
 import { Tag } from "@/app/components/tag";
 import { BackToHome } from "@/app/components/back-to-home";
+import { SITE_NAME } from "@/app/constants";
 
 export function generateStaticParams() {
   const posts = getSortedPosts();
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = getPostBySlug(slug);
   return {
-    title: post.metadata.title,
+    title: `${post.metadata.title} - ${SITE_NAME}`,
     description: removeMarkdown(post.content.slice(0, 160)).replace(/\n/g, ' '),
   };
 }
