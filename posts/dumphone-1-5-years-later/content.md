@@ -75,8 +75,8 @@ rockin' your current lifestyle. I mean, I only did it to see if I could and it j
 to do so. It does require compromises, and you should consider every aspect before committing (do I need Uber? A government ID app of some sort?),
 but do consider whether those deal-breaking aspects are *truly* deal-breaking.
 
-On the other hand, it's perfectly okay to need your phone to do things. A "dumbphone" isn't some sort of strict set of rules where you can't have any music streaming service or Whatsapp
-or maps or a touchscreen, it's a personal effort to disconnect from a world so desperate for you to stay and scroll. If not a dumbphone, try an older smartphone, or screen time limits, or
+On the other hand, it's perfectly okay to need your phone to do things. A "dumbphone" isn't a device that follows some sort of strict set of rules where you can't have any music streaming service or Whatsapp
+or maps or a touchscreen, it's more of a personal effort to disconnect from a world so desperate for you to stay and scroll. If not a "real" dumbphone, try an older smartphone, or screen time limits, or
 [unlauncher](https://f-droid.org/en/packages/com.jkuester.unlauncher/) or something. It's perfectly fine to use a smartphone in moderation, just like anything else.
 
 ## Final Thoughts
