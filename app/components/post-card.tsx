@@ -30,7 +30,10 @@ export default function PostCard({ post }: { post: Post}) {
         hover:drop-shadow-[-16px_16px_0_#000]
       ">
           {post.metadata.title}
-        <p className="text-sm text-accent">{new Date(post.metadata.date).toLocaleDateString()}</p>
+        <div className="w-full flex flex-row justify-between font-normal text-sm text-accent">
+          <p>{new Date(post.metadata.date).toLocaleDateString()}</p>
+          <p>{post.metadata.estTime && `~${post.metadata.estTime} read`}</p>
+        </div>
       </div>
     </Link>
   )

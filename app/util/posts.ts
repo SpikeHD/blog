@@ -1,6 +1,7 @@
 import fs from 'fs';
 import { notFound } from 'next/navigation';
 import path from 'path';
+import { estimateReadingTime } from './time';
 
 type PostMetadata = {
   [key: string]: string | string[] | undefined;
@@ -8,6 +9,7 @@ type PostMetadata = {
   date: string;
   tags?: string[];
   visible: string;
+  estTime?: string;
 }
 
 export type Post = {
@@ -38,6 +40,8 @@ function parsePost(contents: string): { metadata: PostMetadata; content: string 
 
     metadata[key.trim()] = rest.join(':').trim();
   });
+
+  metadata.estTime = estimateReadingTime(content.split(" ").length);
 
   return { metadata, content };
 }
