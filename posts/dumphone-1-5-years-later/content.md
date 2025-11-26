@@ -75,7 +75,9 @@ rockin' your current lifestyle. I mean, I only did it to see if I could and it j
 to do so. It does require compromises, and you should consider every aspect before committing (do I need Uber? A government ID app of some sort?),
 but do consider whether those deal-breaking aspects are *truly* deal-breaking.
 
-Or just setup a screen time limit or use [unlauncher](https://f-droid.org/en/packages/com.jkuester.unlauncher/) or something.
+On the other hand, it's perfectly okay to need your phone to do things. A "dumbphone" isn't some sort of strict set of rules where you can't have any music streaming service or Whatsapp
+or maps or a touchscreen, it's a personal effort to disconnect from a world so desperate for you to stay and scroll. If not a dumbphone, try an older smartphone, or screen time limits, or
+[unlauncher](https://f-droid.org/en/packages/com.jkuester.unlauncher/) or something. It's perfectly fine to use a smartphone in moderation, just like anything else.
 
 ## Final Thoughts
 
@@ -83,11 +85,7 @@ I want to be clear that this is not some holier-than-thou effort to make me look
 playing games, watching YouTube, and talking to my friends on Discord. For me, however, it's been really nice to have all of those things live on their own respective devices, rather
 than constantly having them (and other things!) blaring at me for my attention at every moment.
 
-I also think that it's perfectly okay to need your phone to do things. A "dumbphone" isn't some sort of strict set of rules where you can't have any music streaming service or Whatsapp
-or maps or a touchscreen, it's a personal effort to disconnect from a world so desperate for you to stay and scroll. If not a dumbphone, try screen time limits or
-[unlauncher](https://f-droid.org/en/packages/com.jkuester.unlauncher/) or something. It's perfectly fine to use a smartphone in moderation, just like anything else.
-
-If you think, however, that you might benefit from this sort of change and have the means to do so, why not try it? At the very least, it's kinda fun to tinker :P
+If you think that you might benefit from this sort of change and have the means to do so, why not try it? At the very least, it's kinda fun to tinker :P
 
 **P.S** *Oh, and if you do decide to import one, triple-check that it supports your carrier's cellular bands!*
 
