@@ -87,7 +87,7 @@ I also think that it's perfectly okay to need your phone to do things. A "dumbph
 or maps or a touchscreen, it's a personal effort to disconnect from a world so desperate for you to stay and scroll. If not a dumbphone, try screen time limits or
 (unlauncher)[https://f-droid.org/en/packages/com.jkuester.unlauncher/] or something. It's perfectly fine to use your phone in moderation, just like anything else.
 
-If you think, however, you might benefit from this sort of change and have the means to do so, why not try it? At the very least, it's kinda fun :P
+If you think, however, you might benefit from this sort of change and have the means to do so, why not try it? At the very least, it's kinda fun to tinker :P
 
 **P.S** *Oh, and if you do decide to import one, triple-check that it supports your carrier's cellular bands!*
 
