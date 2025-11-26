@@ -85,7 +85,7 @@ than constantly having them (and other things!) blaring at me for my attention a
 
 I also think that it's perfectly okay to need your phone to do things. A "dumbphone" isn't some sort of strict set of rules where you can't have any music streaming service or Whatsapp
 or maps or a touchscreen, it's a personal effort to disconnect from a world so desperate for you to stay and scroll. If not a dumbphone, try screen time limits or
-[unlauncher](https://f-droid.org/en/packages/com.jkuester.unlauncher/) or something. It's perfectly fine to use your phone in moderation, just like anything else.
+[unlauncher](https://f-droid.org/en/packages/com.jkuester.unlauncher/) or something. It's perfectly fine to use a smartphone in moderation, just like anything else.
 
 If you think, however, you might benefit from this sort of change and have the means to do so, why not try it? At the very least, it's kinda fun to tinker :P
 
