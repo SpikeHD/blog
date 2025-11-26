@@ -84,9 +84,10 @@ playing games, watching YouTube, and talking to my friends on Discord. For me, h
 than constantly having them (and other things!) blaring at me for my attention at every moment.
 
 I also think that it's perfectly okay to need your phone to do things. A "dumbphone" isn't some sort of strict set of rules where you can't have any music streaming service or Whatsapp
-or maps or a touchscreen, it's a personal effort to disconnect from a world so desperate for you to stay and scroll. It's perfectly fine to use your phone in moderation, just like anything else...
+or maps or a touchscreen, it's a personal effort to disconnect from a world so desperate for you to stay and scroll. If not a dumbphone, try screen time limits or
+(unlauncher)[https://f-droid.org/en/packages/com.jkuester.unlauncher/] or something. It's perfectly fine to use your phone in moderation, just like anything else.
 
-...but if you think you might benefit from this sort of change and have the means to do so, why not try it? At the very least, it's kinda fun :P
+If you think, however, you might benefit from this sort of change and have the means to do so, why not try it? At the very least, it's kinda fun :P
 
 **P.S** *Oh, and if you do decide to import one, triple-check that it supports your carrier's cellular bands!*
 
