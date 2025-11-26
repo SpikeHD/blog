@@ -33,12 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${poppinsMono.variable} antialiased w-screen h-screen overflow-hidden`}
+        className={`${poppins.variable} ${poppinsMono.variable} antialiased w-screen min-h-screen`}
       >
-        <div className="flex items-start justify-center w-full h-full">
-          <div className="flex flex-col w-full max-w-4xl h-full">
-            <div className="flex flex-col lg:flex-row h-full min-h-0">
-              <div className="flex flex-col justify-between w-full lg:w-1/4 lg:h-full px-4 lg:pr-8 pb-4 lg:pb-0 flex-shrink-0">
+        <div className="flex items-start justify-center w-full min-h-screen">
+          <div className="flex flex-col w-full max-w-4xl min-h-screen">
+            <div className="flex flex-col lg:flex-row min-h-screen">
+              <div className="flex flex-col justify-between w-full lg:w-1/4 lg:h-screen lg:sticky lg:top-0 px-4 lg:pr-8 pb-4 lg:pb-0 shrink-0">
                 <div>
                   <Header />
 
@@ -64,7 +64,7 @@ export default function RootLayout({
                 </div>
               </div>
 
-              <div className="w-full lg:w-3/4 px-4 lg:pl-8 lg:pr-4 lg:border-l border-accent border-dashed overflow-y-auto flex-1 min-h-0">
+              <div className="w-full lg:w-3/4 px-4 lg:pl-8 lg:pr-4 lg:border-l border-accent border-dashed flex-1">
                 {children}
               </div>
             </div>
