@@ -83,7 +83,10 @@ I want to be clear that this is not some holier-than-thou effort to make me look
 playing games, watching YouTube, and talking to my friends on Discord. For me, however, it's been really nice to have all of those things live on their own respective devices, rather
 than constantly having them (and other things!) blaring at me for my attention at every moment.
 
-It's perfectly fine to use your phone in moderation, just like anything else, but if you think you might benefit from this sort of change and have the means to do so, why not try it?
+I also think that it's perfectly okay to need your phone to do things. A "dumbphone" isn't some sort of strict set of rules where you can't have any music streaming service or Whatsapp
+or maps or a touchscreen, it's a personal effort to disconnect from a world so desperate for you to stay and scroll. It's perfectly fine to use your phone in moderation, just like anything else...
+
+...but if you think you might benefit from this sort of change and have the means to do so, why not try it? At the very least, it's kinda fun :P
 
 **P.S** *Oh, and if you do decide to import one, triple-check that it supports your carrier's cellular bands!*
 
