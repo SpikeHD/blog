@@ -1,5 +1,7 @@
 # custom
 public/posts
+# this is generated on the fly
+public/rss.xml
 
 # dependencies
 /node_modules

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getPostBySlug(slug);
   return {
     title: `${post.metadata.title} - ${SITE_NAME}`,
-    description: removeMarkdown(post.content.slice(0, 160)).replace(/\n/g, ' '),
+    description: removeMarkdown(post.content.slice(0, 160)).replace(/\n/g, ' ') + '...',
   };
 }
 

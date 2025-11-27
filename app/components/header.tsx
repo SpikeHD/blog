@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AVATAR_URL } from "../constants";
 
 export function Header() {
   return (
@@ -10,7 +11,7 @@ export function Header() {
 
       <div className="shrink-0 w-12 h-12 lg:w-36 lg:h-36">
         <Image
-          src="https://avatars.githubusercontent.com/u/25207995?v=4"
+          src={AVATAR_URL}
           alt="SpikeHD's Profile Picture"
           width={128}
           height={128}

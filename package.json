@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.8.0",
+    "feed": "^5.1.0",
     "lucide-react": "^0.553.0",
     "next": "16.0.3",
     "react": "19.2.0",
