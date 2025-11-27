@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>SpikeHD's Evil Hell World</title>
+        <link>https://blog.spikehd.dev</link>
+        <description>A blog about software, hardware, and also neither of those things sometimes.</description>
+        <lastBuildDate>Thu, 27 Nov 2025 02:28:18 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>My mind-cube</generator>
+        <image>
+            <title>SpikeHD's Evil Hell World</title>
+            <url>https://avatars.githubusercontent.com/u/25207995?v=4</url>
+            <link>https://blog.spikehd.dev</link>
+        </image>
+        <copyright>All rights reserved 2025, SpikeHD</copyright>
+        <category>Software</category>
+        <category>Hardware</category>
+        <category>Programming</category>
+        <category>Technology</category>
+        <category>Personal</category>
+        <item>
+            <title><![CDATA[My "Dumbphone" Transition, 1.5 Years Later]]></title>
+            <link>https://blog.spikehd.dev/post/dumphone-1-5-years-later</link>
+            <guid isPermaLink="false">https://blog.spikehd.dev/post/dumphone-1-5-years-later</guid>
+            <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[In July of 2024, I put my jailbroken iPhone 11 (with an ever-so-slightly cracked screen) into a drawer, and committed to using a Kyocera 902KC as my main phon...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[A Dorion Retrospective]]></title>
+            <link>https://blog.spikehd.dev/post/a-dorion-retrospective</link>
+            <guid isPermaLink="false">https://blog.spikehd.dev/post/a-dorion-retrospective</guid>
+            <pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Don't know what Dorion is? Take a look at the GitHub repository!  Dorion just turned 3.191781 years old! Or alternati...]]></description>
+        </item>
+    </channel>
+</rss>
