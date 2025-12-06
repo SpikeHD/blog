@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Post } from "../util/posts";
+import { PostDate } from "./post-date";
 
 export default function PostCard({ post }: { post: Post}) {
   return (
@@ -31,7 +32,7 @@ export default function PostCard({ post }: { post: Post}) {
       ">
           {post.metadata.title}
         <div className="w-full flex flex-row justify-between font-normal text-sm text-accent">
-          <p>{new Date(post.metadata.date).toLocaleDateString()}</p>
+          <PostDate dateString={post.metadata.date} />
           <p>{post.metadata.estTime && `~${post.metadata.estTime} read`}</p>
         </div>
       </div>

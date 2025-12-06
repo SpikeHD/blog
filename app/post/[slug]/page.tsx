@@ -8,6 +8,7 @@ import { Divider } from "@/app/components/divider";
 import { Tag } from "@/app/components/tag";
 import { BackToHome } from "@/app/components/back-to-home";
 import { SITE_NAME } from "@/app/constants";
+import { PostDate } from "@/app/components/post-date";
 
 export function generateStaticParams() {
   const posts = getSortedPosts();
@@ -38,7 +39,7 @@ export default async function Post({
       <div className="py-8">
         <h1>{post.metadata.title}</h1>
         <p className="flex flex-row justify-between text-sm text-accent">
-          <span>{new Date(post.metadata.date).toLocaleDateString()}</span>
+          <PostDate dateString={post.metadata.date} />
           <a className="underline font-bold" href={`https://github.com/SpikeHD/blog/commits/main/posts/${slug}/content.md`}>View revision history</a>
         </p>
 
