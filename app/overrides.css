@@ -46,6 +46,10 @@
   content: "]";
 }
 
+.markdown code {
+  @apply rounded-sm px-1 bg-background-secondary;
+}
+
 @layer base {
   /* Headings */
   h1 {

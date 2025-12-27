@@ -4,12 +4,14 @@
 
 :root {
   --background: #1c2129;
+  --background-secondary: #111418;
   --foreground: #7ae4fe;
   --secondary: #7aadfe;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
   --color-foreground: var(--foreground);
   --color-secondary: var(--secondary);
   --font-sans: var(--font-geist-sans);

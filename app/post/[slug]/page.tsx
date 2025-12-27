@@ -1,7 +1,5 @@
 import { Metadata } from "next";
 import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import rehypeRaw from "rehype-raw";
 import removeMarkdown from "remove-markdown";
 import { getPostBySlug, getSortedPosts } from "@/app/util/posts";
 import { Divider } from "@/app/components/divider";
@@ -9,6 +7,7 @@ import { Tag } from "@/app/components/tag";
 import { BackToHome } from "@/app/components/back-to-home";
 import { SITE_NAME } from "@/app/constants";
 import { PostDate } from "@/app/components/post-date";
+import { MarkdownWithCode } from "@/app/components/markdown-with-code";
 
 export function generateStaticParams() {
   const posts = getSortedPosts();
@@ -46,9 +45,9 @@ export default async function Post({
         <Divider />
 
         <div className="markdown">
-          <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+          <MarkdownWithCode>
             {post.content}
-          </Markdown>
+          </MarkdownWithCode>
         </div>
 
         <Divider />
