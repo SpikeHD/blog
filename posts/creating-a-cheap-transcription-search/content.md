@@ -7,12 +7,13 @@ visible: true
 
 Much like any person trying to prevent silence from allowing their mind to serve them a single thought, I listen to a lot of podcasts. A favorite of mine is [The Yard](https://www.youtube.com/@TheYardPodcast),
 which [someone made a "bit search" website](https://old.reddit.com/r/TheYardPodcast/comments/1b0tb5n/i_made_yardsearch_a_search_engine_for_the_yard/) for last year. I've always thought this site was super cool in functionality,
-and I myself have used it before, so I wanted to recreate the concept for another favorite web-show of mine, [Message2AllFriends](https://www.youtube.com/@Message2AllFriends)[^1]. This ended up becoming
-[https://search4allmessages.online/](https://search4allmessages.online/)!
+and I myself have used it before, so I wanted to recreate the concept for another favorite web-show of mine, [Message2AllFriends](https://www.youtube.com/@Message2AllFriends)[^1].
+
+This ended up becoming [search4allmessages.online](https://search4allmessages.online/)!
 
 # Inception
 
-My first and only requirement is that it had to be cheap to host. In order to prevent any costly backend requirements, my original idea was that it would download some compressed form of every transcript
+My first and only requirement is that it had to be cheap af to host. In order to prevent any costly backend requirements, my original idea was that it would download some compressed form of every transcript
 and have the search occur on the client. As it turns out, that idea sucked ass:
 
 ![](./sc1.png)
@@ -120,6 +121,8 @@ This is done with React + Tailwind, and there isn't anything particularly intere
 <span class="text-sm">*["Got a homie named Tustin, he's got fuckin- uhm- and he's got molars for front teeth"](https://www.youtube.com/watch?v=nNYiq8k-gso)*</span>
 
 Close this tab and go watch M2AF now. Some are saying they're the most cerebral minds of our generation and you don't wanna be missing out on that.
+
+***Edit:** Just found out they [pinned the site on the subreddit](https://old.reddit.com/r/M2AF/) lol. All of a sudden I feel a sense of responsibility to keep this site up and running... uh oh...
 
 [^1]: for the unaware, this is a reference to an old xbox 360-era callout. you'd recieve a message along the lines of *"m2af deleting people off my friends list, msg to stay"* or *"m2af hosting quickscoping lobby must have mic"*
 [^2]: the library i use for the search is [fuse.js](https://www.fusejs.io/). it was the first one i tried and it worked well, though i want to move the search to rust in the future.
