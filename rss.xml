@@ -4,7 +4,7 @@
         <title>SpikeHD's Evil Hell World</title>
         <link>https://blog.spikehd.dev</link>
         <description>A blog about software, hardware, and also neither of those things sometimes.</description>
-        <lastBuildDate>Sat, 06 Dec 2025 00:29:17 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 27 Dec 2025 04:20:39 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>My mind-cube</generator>
         <image>
@@ -18,6 +18,13 @@
         <category>Programming</category>
         <category>Technology</category>
         <category>Personal</category>
+        <item>
+            <title><![CDATA[Building a Cheap Transcript Search Engine]]></title>
+            <link>https://blog.spikehd.dev/post/creating-a-cheap-transcription-search</link>
+            <guid isPermaLink="false">https://blog.spikehd.dev/post/creating-a-cheap-transcription-search</guid>
+            <pubDate>Fri, 26 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Much like any person trying to prevent silence from allowing their mind to serve them a single thought, I listen to a lot of podcasts. A favorite of mine is [Th...]]></description>
+        </item>
         <item>
             <title><![CDATA[My "Dumbphone" Transition, 1.5 Years Later]]></title>
             <link>https://blog.spikehd.dev/post/dumphone-1-5-years-later</link>
