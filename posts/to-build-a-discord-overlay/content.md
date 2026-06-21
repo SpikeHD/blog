@@ -1,9 +1,11 @@
 ---
-title: Building a Discord Overlay
+title: To Build a Discord Overlay
 date: 2026-06-20
 tags: ramblings, programming
 visible: true
 ---
+
+![](./preview.png)
 
 I've always liked the *idea* of Discord's overlay, but I always found it a smidge clunky and I've been gaming entirely on Linux for the past few years, which has meant
 I haven't been able to use anything of the sort. There are a couple alternatives out there, but they didn't really speak to me for one reason or another[^1].
@@ -134,7 +136,7 @@ pub fn build_rpc_authenticate_request(access_token: impl Into<String>) -> serde_
 
 Now we're good to go!
 
-Commands are a simple format, they have a `cmd`, `args`, and a `nonce`. The [discord.food](docs.discord.food) docs are an excellent user-made resource for exactly how this all works, but this gist is that
+Commands are a simple format, they have a `cmd`, `args`, and a `nonce`. The [discord.food](docs.discord.food) docs are an excellent user-made resource for exactly how this all works, but the gist is that
 we can tell Discord to do anything by sending over a very simple JSON payload through the socket. For example, muting oneself is as simple as sending:
 
 ```json
@@ -165,7 +167,7 @@ pub fn subscribe_voice_channel(
 }
 ```
 
-## I heard Orbolay Supports 3rd-party Clients?
+## I Heard Orbolay Supports 3rd-party Clients?
 
 It sure does! Orbolay has a built-in websocket server for use with third-party applications like web Discord, Dorion, Vesktop, etc. It works basically the same, with the caveat that the 3rd party client
 needs some sort of modification to foster the communication. For example, the [shelter](shelter.uwu.network) [plugin](https://github.com/SpikeHD/shelter-plugins#orbolay-bridge) subscribes to Flux
@@ -200,12 +202,13 @@ Great, now we have all the data we'd ever want in the world, how do we show it? 
 1. Create a transparent, click-through window that slaps itself over the whole screen or
 2. Hook into the graphics pipeline of a running game and display it there
 
-As you might imagine, creating a transparent window is significantly easier and less complex, so that is what I opted to go for.
+As you might imagine, creating a transparent window is significantly easier and less complex, so that is what I opted to go for. It also means Orbolay isn't limited to existing
+just within applications, it can exist on your desktop as well!
 
 ## Graphics and Windows
 
 To draw to the screen I use [Freya](https://freyaui.dev/), a super cool library based on Skia that offers a declarative, crossplatform GUI. It's got state, hooks,
-everything you'd want as a web-developer-by-trade-systems-developer-by-dream, not that I'd know.
+everything you'd want as a web-developer-by-trade-backend-developer-by-dream, not that I'd know.
 
 Behind the scenes it uses [winit](https://github.com/rust-windowing/winit) for showing the Window, which gives us easy access to what we'd need to create a transparent,
 click-through window... with a little bit of help:
@@ -263,8 +266,8 @@ pub fn window_size_for_display(display: &DisplayInfo) -> PhysicalSize<f64> {
 ```
 
 Oh? Whats that `+1` and `-1` doing there? Apparently on AMD GPUs the driver will stop drawing the desktop when it thinks it's being covered completely by another window[^2]. Unfortunately, it's quite stupid, as
-this means even though the window is transparent, everything behind the overlay turns pitch black. The `-1` also exists to [keep Windows' hide-taskbar option working](https://github.com/SpikeHD/Orbolay/issues/29), even when the window allows all events to pass
-through... sigh...
+this means even though the window is transparent, everything behind the overlay turns pitch black. The `-1` also exists to [keep Windows' hide-taskbar option working](https://github.com/SpikeHD/Orbolay/issues/29),
+even when the window allows mouse events to pass through... sigh...
 
 Displaying the contents itself is pretty easy. Components are built as structs with a `render` function, and are created using function chaining. For example, here's what a user row looks like:
 
@@ -307,7 +310,7 @@ impl Component for UserRow {
 ```
 
 To make the controls work, we detect a (customizable!) global keybind and set click-through accordingly. Under almost every circumstance, calling `window.set_cursor_hittest(true/false)` is enough to
-change whether the overlay consumes mouse click events, EXCEPT on ***KDE X11***[^3], which requires the overlay to shrink and grow it's input shape accordingly:
+change whether the overlay consumes mouse click events, EXCEPT on ***KDE X11 ONLY***[^3], which requires the overlay to shrink and grow it's input shape accordingly:
 
 ```rust
 let _ = w.set_cursor_hittest(clickable);
@@ -408,7 +411,7 @@ match msg.cmd.as_str() {
       .iter()
       // Get the current user
       .find(|user| user.id == state.user_id)
-      // Are the muted?
+      // Are they muted?
       .map(|user| user.voice_state == UserVoiceState::Muted)
       .unwrap_or(false);
 
@@ -419,10 +422,68 @@ match msg.cmd.as_str() {
 }
 ```
 
+# Handling Configuration Changes
+
+To simplify the configuration handling, the configuration window itself is basically an entirely separate process that writes directly to the config file. Having to restart Orbolay after every pixel
+offset change would be tedious and stupid though, so to hot-reload the configuration we can use OS-level notifications like `inotify`!
+
+In another thread, we keep an eye on the config file, and when it changes, we redraw the UI on the fly! Simple, and without any IPC requirements of it's own!
+
+```rust
+
+pub fn start_config_watcher(shared: SharedAppState, redraw_tx: flume::Sender<()>) {
+  log!("Starting config file notification thread");
+  std::thread::spawn(move || {
+    let (tx, rx) = mpsc::channel::<Result<Event>>();
+    let mut watcher = notify::recommended_watcher(tx);
+    let config_path = config_dir().join("config.json");
+
+    watcher.watch(&config_path, notify::RecursiveMode::NonRecursive)
+
+    loop {
+      match rx.recv() {
+        Ok(Ok(event)) => {
+          if !event.kind.is_modify() {
+            continue;
+          }
+
+          if event.paths.iter().any(|p| p == &config_path) {
+            log!("Config file changed, reloading...");
+            if let Some(new_config) = load_config() {
+              let mut state = shared.write().unwrap();
+              state.config = new_config;
+              redraw_tx.send(()).ok();
+              log!("Config reloaded successfully");
+            } else {
+              warn!("Failed to reload config file");
+            }
+          }
+        }
+        // ...
+      }
+    }
+  });
+}
+```
+
+# Rendering the Soundboard
+
+I know this one doesn't seem interesting, and that's because it *almost* isn't, but... well, you wouldn't believe how complex font formats and font format features get.
+
+In case you weren't aware, Discord fonts are actually [Twemoji](https://github.com/twitter/twemoji), an open-source emoji resource developed by Twitter/X the everything app.
+Twemoji doesn't distribute a standard font file, only a JavaScript library(??) and... well actually that's it.
+
+Some people have taken it upon themselves to distribute a standard font package, like [13rac1/twemoji-color-font](https://github.com/13rac1/twemoji-color-font). Problem is,
+this font file depends on a feature called "SVGinOT". This feature, co-authored by Adobe and Mozilla, is unfortunately not very well supported, and is DEFINITELY not supported
+in Skia/Freya's rendering.
+
+So, out of options, I look elsewhere and I find none other than the [Alpine Linux `font-twemoji` package](https://pkgs.alpinelinux.org/package/edge/community/x86/font-twemoji). This
+is apparently a [custom build of the font](https://git.sr.ht/~whynothugo/twemoji.ttf) using regular TrueType format, and properly renders in Freya! Thank you [whynothugo](https://git.sr.ht/~whynothug)!
+
 # That's It!
 
-This post doesn't even cover config hot-reloading[^6], emojis[^7], keybind handling, or notifications. Orbolay is, of course, [entirely open-source](https://github.com/SpikeHD/Orbolay),
-so if those interest you, feel free to dig into it! It really isn't that complicated at the end of the day, just a lot of back-and-forth IPC communication with some UI sugar on top.
+Orbolay is, of course, [entirely open-source](https://github.com/SpikeHD/Orbolay), so if it interests you, feel free to dig into it! It really isn't that complicated at the end of the day,
+just a lot of back-and-forth IPC communication with some UI sugar on top.
 
 Orbolay has been super fulfilling to work on, and it's been a very interesting challenge figuring out all the different little tweaks that are needed to ensure it works the same
 on every platform. If it interests you, give it a try! And if you want something changed or added, like always, PRs and issues are always welcome :)
@@ -433,5 +494,3 @@ while made with GTK3, only shows users and doesn't offer any advanced controls (
 [^3]: https://github.com/SpikeHD/Orbolay/issues/24
 [^4]: https://github.com/SpikeHD/Orbolay/issues/22
 [^5]: https://github.com/SpikeHD/Orbolay/issues/28
-[^6]: using `inotify`, if you were curious, since the config can be run independently of the main overlay
-[^7]: this required ripping the `ttf` file from the Twemoji package for Alpine Linux of all things, lol
