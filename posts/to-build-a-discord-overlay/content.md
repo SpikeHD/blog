@@ -7,8 +7,8 @@ visible: true
 
 ![](./preview.png)
 
-I've always liked the *idea* of Discord's overlay, but I always found it a smidge clunky and I've been gaming entirely on Linux for the past few years, which has meant
-I haven't been able to use anything of the sort. There are a couple alternatives out there, but they didn't really speak to me for one reason or another[^1].
+I've always liked the *idea* of Discord's overlay, but I always found it a smidge clunky. I've also been gaming entirely on Linux for the past few years which has meant
+I have no access to the official overlay anyways. There are a couple alternatives out there, but they didn't really speak to me for one reason or another[^1].
 
 After having the itch but never the reason, an [issue was raised in Dorion](https://github.com/SpikeHD/Dorion/issues/326) requesting the exact thing I'd been mulling over
 for the last while, and it gave me the push to finally look into how one might build such an application. Now that Orbolay is in a pretty good state, I thought I'd share
