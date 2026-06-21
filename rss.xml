@@ -4,7 +4,7 @@
         <title>SpikeHD's Evil Hell World</title>
         <link>https://blog.spikehd.dev</link>
         <description>A blog about software, hardware, and also neither of those things sometimes.</description>
-        <lastBuildDate>Sun, 21 Jun 2026 06:00:20 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 21 Jun 2026 18:27:01 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>My mind-cube</generator>
         <image>
@@ -23,7 +23,7 @@
             <link>https://blog.spikehd.dev/post/to-build-a-discord-overlay</link>
             <guid isPermaLink="false">https://blog.spikehd.dev/post/to-build-a-discord-overlay</guid>
             <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[  I've always liked the idea of Discord's overlay, but I always found it a smidge clunky and I've been gamin...]]></description>
+            <description><![CDATA[  I've always liked the idea of Discord's overlay, but I always found it a smidge clunky. I've also been gam...]]></description>
         </item>
         <item>
             <title><![CDATA[Building a Cheap Transcript Search Engine]]></title>
