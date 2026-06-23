@@ -19,7 +19,7 @@ export function ViewCount({ countmyclick }: { countmyclick?: string }) {
     };
 
     fetchCount();
-  }, []);
+  }, [countmyclick]);
 
   if (!countmyclick) {
     return null
@@ -27,7 +27,7 @@ export function ViewCount({ countmyclick }: { countmyclick?: string }) {
 
   return (
     <div className="text-sm text-accent">
-      {(count ?? 0).toLocaleString()} views
+      {(count ?? 0).toLocaleString()} view{count !== 1 ? 's' : ''}
     </div>
   );
 }
