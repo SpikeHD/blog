@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Loader } from "./loader";
 
 export function ViewCount({ countmyclick }: { countmyclick?: string }) {
   const [count, setCount] = useState<number | null>(null);
@@ -26,8 +27,13 @@ export function ViewCount({ countmyclick }: { countmyclick?: string }) {
   }
 
   return (
-    <div className="text-sm text-accent">
-      {(count ?? 0).toLocaleString()} view{count !== 1 ? 's' : ''}
+    <div className="text-sm text-accent h-4 flex items-center">
+      {count === null ? <Loader className="text-foreground w-4 h-4" /> : (
+        <>
+          {(count ?? 0).toLocaleString()} view{count !== 1 ? 's' : ''}
+        </>
+      )}
+
     </div>
   );
 }
