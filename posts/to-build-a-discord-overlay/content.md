@@ -3,6 +3,7 @@ title: To Build a Discord Overlay
 date: 2026-06-20
 tags: ramblings, programming
 visible: true
+countmyclick: 57b4241e-eb80-47c0-8856-b9eb55c80892
 ---
 
 ![](./preview.png)

@@ -3,6 +3,7 @@ title: Building a Cheap Transcript Search Engine
 date: 2025-12-26
 tags: ramblings, programming
 visible: true
+countmyclick: 2da3dd0a-a2c1-4c81-b912-70b5986d4a09
 ---
 
 Much like any person trying to prevent silence from allowing their mind to serve them a single thought, I listen to a lot of podcasts. A favorite of mine is [The Yard](https://www.youtube.com/@TheYardPodcast),

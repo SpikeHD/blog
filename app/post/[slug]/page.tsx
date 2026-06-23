@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Markdown from "react-markdown";
 import removeMarkdown from "remove-markdown";
 import { getPostBySlug, getSortedPosts } from "@/app/util/posts";
 import { Divider } from "@/app/components/divider";
@@ -8,6 +7,7 @@ import { BackToHome } from "@/app/components/back-to-home";
 import { SITE_NAME } from "@/app/constants";
 import { PostDate } from "@/app/components/post-date";
 import { MarkdownWithCode } from "@/app/components/markdown-with-code";
+import { ViewCount } from "@/app/components/view-count";
 
 export function generateStaticParams() {
   const posts = getSortedPosts();
@@ -41,6 +41,10 @@ export default async function Post({
           <PostDate dateString={post.metadata.date} />
           <a className="underline font-bold" href={`https://github.com/SpikeHD/blog/commits/main/posts/${slug}/content.md`}>View revision history</a>
         </p>
+
+        <div className="py-1">
+          <ViewCount countmyclick={post.metadata.countmyclick} />
+        </div>
 
         <Divider />
 

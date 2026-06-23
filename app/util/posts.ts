@@ -8,6 +8,7 @@ type PostMetadata = {
   title: string;
   date: string;
   tags?: string[];
+  countmyclick?: string;
   visible: string;
   estTime: string;
 }

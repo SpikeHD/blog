@@ -3,6 +3,7 @@ title: My "Dumbphone" Transition, 1.5 Years Later
 date: 2025-11-25
 tags: ramblings
 visible: true
+countmyclick: 65cc7f62-e00a-4684-b366-38c9bd40f41a
 ---
 
 In July of 2024, I put my jailbroken iPhone 11 (with an *ever-so-slightly* cracked screen) into a drawer, and committed to using a Kyocera 902KC as my main
