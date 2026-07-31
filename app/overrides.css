@@ -130,3 +130,10 @@
     border-bottom: 1px solid var(--foreground);
   }
 }
+
+.llms,
+.llms > * {
+  height: 0px;
+  width: 0px;
+  overflow: hidden;
+}

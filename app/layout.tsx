@@ -7,6 +7,7 @@ import { Header } from "./components/header";
 
 import "./globals.css";
 import { SITE_DESCRIPTION, SITE_NAME } from "./constants";
+import { LlmInstructions } from "./components/llm-instructions";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${poppinsMono.variable} antialiased w-screen min-h-screen`}
       >
+        <LlmInstructions />
         <div className="flex items-start justify-center w-full min-h-screen">
           <div className="flex flex-col w-full max-w-4xl min-h-screen">
             <div className="flex flex-col lg:flex-row min-h-screen">
