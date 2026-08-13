@@ -4,7 +4,7 @@
         <title>SpikeHD's Evil Hell World</title>
         <link>https://blog.spikehd.dev</link>
         <description>A blog about software, hardware, and also neither of those things sometimes.</description>
-        <lastBuildDate>Fri, 31 Jul 2026 07:44:46 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 13 Aug 2026 00:40:52 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>My mind-cube</generator>
         <image>
@@ -18,6 +18,13 @@
         <category>Programming</category>
         <category>Technology</category>
         <category>Personal</category>
+        <item>
+            <title><![CDATA[Announcing - redlib.spikehd.dev]]></title>
+            <link>https://blog.spikehd.dev/post/announcing-redlib-instance</link>
+            <guid isPermaLink="false">https://blog.spikehd.dev/post/announcing-redlib-instance</guid>
+            <pubDate>Wed, 12 Aug 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Due to the recent changes to Reddit that made it so the old layout now requires an account, I have forked Redlib and dep...]]></description>
+        </item>
         <item>
             <title><![CDATA[To Build a Discord Overlay]]></title>
             <link>https://blog.spikehd.dev/post/to-build-a-discord-overlay</link>
