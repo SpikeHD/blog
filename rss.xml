@@ -4,7 +4,7 @@
         <title>SpikeHD's Evil Hell World</title>
         <link>https://blog.spikehd.dev</link>
         <description>A blog about software, hardware, and also neither of those things sometimes.</description>
-        <lastBuildDate>Thu, 13 Aug 2026 00:40:52 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 14 Aug 2026 22:39:36 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>My mind-cube</generator>
         <image>
@@ -19,7 +19,7 @@
         <category>Technology</category>
         <category>Personal</category>
         <item>
-            <title><![CDATA[Announcing - redlib.spikehd.dev]]></title>
+            <title><![CDATA[Now online: redlib.spikehd.dev]]></title>
             <link>https://blog.spikehd.dev/post/announcing-redlib-instance</link>
             <guid isPermaLink="false">https://blog.spikehd.dev/post/announcing-redlib-instance</guid>
             <pubDate>Wed, 12 Aug 2026 00:00:00 GMT</pubDate>
