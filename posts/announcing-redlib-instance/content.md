@@ -1,5 +1,5 @@
 ---
-title: Announcing - redlib.spikehd.dev
+title: Now online: redlib.spikehd.dev
 date: 2026-08-12
 tags: services
 visible: true
@@ -10,6 +10,7 @@ Due to the recent changes to Reddit that made it so the old layout now requires 
 and deployed it.
 
 This fork merges many of the [stagnant PRs](https://github.com/redlib-org/redlib/pulls) left unmerged upstream, and also includes some personal touches,
-like the "Show more" button on post cards, or the "context" button on comments on the user page.
+like the "Show more" button on post cards, proper image gallery preview with "next" and "prev" buttons, or the "context" link on comments on the user page.
+PRs are welcome!
 
 You can access it at https://redlib.spikehd.dev/. Please be gentle, and feel free to add it to your [libredirect](https://github.com/libredirect/browser_extension) extension.
