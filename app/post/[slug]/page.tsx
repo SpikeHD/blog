@@ -8,6 +8,7 @@ import { SITE_NAME } from "@/app/constants";
 import { PostDate } from "@/app/components/post-date";
 import { MarkdownWithCode } from "@/app/components/markdown-with-code";
 import { ViewCount } from "@/app/components/view-count";
+import ReadAloud from "@/app/components/read-aloud";
 
 export function generateStaticParams() {
   const posts = getSortedPosts();
@@ -47,6 +48,10 @@ export default async function Post({
         </div>
 
         <Divider />
+
+        <div className="text-sm text-accent">
+          <ReadAloud />
+        </div>
 
         <div className="markdown">
           <MarkdownWithCode>
