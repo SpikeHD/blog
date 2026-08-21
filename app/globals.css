@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @import "./overrides.css";
+@import "./post-specific.css";
 
 :root {
   --background: #1c2129;

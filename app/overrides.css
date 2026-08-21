@@ -50,6 +50,14 @@
   @apply rounded-sm px-1 bg-background-secondary;
 }
 
+.markdown blockquote {
+  @apply border-l-2 p-0.5 pl-4 my-2 backdrop-brightness-90;
+}
+
+.markdown blockquote p {
+  margin: 2px !important;
+}
+
 @layer base {
   /* Headings */
   h1 {

@@ -61,7 +61,7 @@ export function getSortedPosts(): Post[] {
       const fullPath = path.join(postsDir, `${slug}/content.md`);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { metadata, content } = parsePost(fileContents);
-      const processedContent = processPostImages(slug, content);
+      const processedContent = processPostMedia(slug, content);
 
       return {
         slug,
@@ -86,7 +86,7 @@ export function getPostBySlug(slug: string): Post {
     const fullPath = path.join(postsDir, `${slug}/content.md`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { metadata, content } = parsePost(fileContents);
-    const processedContent = processPostImages(slug, content);
+    const processedContent = processPostMedia(slug, content);
 
     return {
       slug,
@@ -115,7 +115,7 @@ export function getAllUniqueTags(): string[] {
   return Array.from(tagSet);
 }
 
-export function processPostImages(slug: string, content: string): string {
+export function processPostMedia(slug: string, content: string): string {
   const postDir = path.join(postsDir, slug);
   const publicPostDir = path.join(publicPostsDir, slug);
 
@@ -142,6 +142,11 @@ export function processPostImages(slug: string, content: string): string {
   // Also process HTML img tags with relative src paths
   processedContent = processedContent.replace(/<img([^>]*)\ssrc=["']\.\/([^"']+)["']([^>]*)>/g, (match, beforeSrc, imagePath, afterSrc) => {
     return `<img${beforeSrc} src="/posts/${slug}/${imagePath}"${afterSrc}>`;
+  });
+
+  // And video tags with relative src paths
+  processedContent = processedContent.replace(/<video([^>]*)\ssrc=["']\.\/([^"']+)["']([^>]*)>/g, (match, beforeSrc, videoPath, afterSrc) => {
+    return `<video${beforeSrc} src="/posts/${slug}/${videoPath}"${afterSrc}>`;
   });
 
   return processedContent;
