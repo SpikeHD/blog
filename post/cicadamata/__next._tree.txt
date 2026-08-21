@@ -1,0 +1,12 @@
+:HL["/_next/static/chunks/127d21528543c374.css","style"]
+:HL["/_next/static/media/a218039a3287bcfd-s.p.4a23d71b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/posts/cicadamata/cicadagaming.gif","image"]
+:HL["/posts/cicadamata/cicadagaming4.gif","image"]
+:HL["/posts/cicadamata/cicadagaming2.gif","image"]
+:HL["/posts/cicadamata/biglevel.png","image"]
+:HL["/posts/cicadamata/cicadagaming3.gif","image"]
+:HL["/posts/cicadamata/linux.png","image"]
+:HL["/posts/cicadamata/plus.png","image"]
+:HL["/posts/cicadamata/cicada.png","image"]
+:HL["/posts/cicadamata/cicadadeath.png","image"]
+0:{"buildId":"2l09Hp0ySYcn79ZKTaR0F","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"post","paramType":null,"paramKey":"post","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"cicadamata","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

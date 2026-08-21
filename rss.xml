@@ -4,7 +4,7 @@
         <title>SpikeHD's Evil Hell World</title>
         <link>https://blog.spikehd.dev</link>
         <description>A blog about software, hardware, and also neither of those things sometimes.</description>
-        <lastBuildDate>Tue, 18 Aug 2026 21:49:09 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 21 Aug 2026 17:17:47 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>My mind-cube</generator>
         <image>
@@ -18,6 +18,20 @@
         <category>Programming</category>
         <category>Technology</category>
         <category>Personal</category>
+        <item>
+            <title><![CDATA[Baby's First GDPatch Mod: A GDPatch "Tutorial"]]></title>
+            <link>https://blog.spikehd.dev/post/babys-first-gdpatch-mod</link>
+            <guid isPermaLink="false">https://blog.spikehd.dev/post/babys-first-gdpatch-mod</guid>
+            <pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[IMPORTANT: This post will inevitably go out of date as GDPatch gets updates. Always refer to the latest documentation!  For an e...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[I got early access to CICADAMATA" so now you have to hear about it]]></title>
+            <link>https://blog.spikehd.dev/post/cicadamata</link>
+            <guid isPermaLink="false">https://blog.spikehd.dev/post/cicadamata</guid>
+            <pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Finally, knowing cool people has paid off, as I was given access to CICADAMATA" more than a week early...]]></description>
+        </item>
         <item>
             <title><![CDATA[Now online: redlib.spikehd.dev]]></title>
             <link>https://blog.spikehd.dev/post/announcing-redlib-instance</link>

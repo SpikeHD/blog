@@ -10,10 +10,6 @@ Disallow: /
 User-agent: OAI-SearchBot
 Disallow: /
 
-# Google
-User-agent: Google-Extended
-Disallow: /
-
 # Anthropic
 User-agent: Claude-Web
 Disallow: /
@@ -46,7 +42,4 @@ User-agent: FacebookExternalHit
 Disallow: /
 
 User-agent: Twitterbot
-Disallow: /
-
-User-agent: bingbot
 Disallow: /
