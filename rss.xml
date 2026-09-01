@@ -4,7 +4,7 @@
         <title>SpikeHD's Evil Hell World</title>
         <link>https://blog.spikehd.dev</link>
         <description>A blog about software, hardware, and also neither of those things sometimes.</description>
-        <lastBuildDate>Fri, 21 Aug 2026 17:17:47 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 01 Sep 2026 22:04:55 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>My mind-cube</generator>
         <image>
@@ -18,6 +18,13 @@
         <category>Programming</category>
         <category>Technology</category>
         <category>Personal</category>
+        <item>
+            <title><![CDATA[8 Games I'm *actually* playing on my Odin 3]]></title>
+            <link>https://blog.spikehd.dev/post/odin-3-what-im-playing</link>
+            <guid isPermaLink="false">https://blog.spikehd.dev/post/odin-3-what-im-playing</guid>
+            <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[A common trend in most "retro handheld"/SBC gaming communities is this idea of buying a bunch of devices just to not use any of them to... play games. I myself ...]]></description>
+        </item>
         <item>
             <title><![CDATA[Baby's First GDPatch Mod: A GDPatch "Tutorial"]]></title>
             <link>https://blog.spikehd.dev/post/babys-first-gdpatch-mod</link>
