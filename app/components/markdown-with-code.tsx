@@ -13,6 +13,14 @@ export function MarkdownWithCode({ children }: PropsWithChildren) {
       rehypePlugins={[rehypeRaw]}
       components={{
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        img({ node: _, src, alt, ...props }: any) {
+          return (
+            <a href={src as string} target="_blank" rel="noopener noreferrer">
+              <img src={src} alt={alt} {...props} />
+            </a>
+          );
+        },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         code({ node: _, inline, className, children, ...props}: any) {
           const match = /language-(\w+)/.exec(className || '');
 

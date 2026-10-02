@@ -19,7 +19,7 @@ silly internet nothings, so one might imagine those being the ways we communicat
 Problem is, sometimes my friends are unavailable. *How despicable!* They dare leave for a concert, or to
 grocery shop, or travel the world while ***I*** sit here alone, unable to talk about ~~Bebop's stupid
 fucking bullshit hook that somehow grabs me two lanes away if there is one thing I want in this life
-it is for that character to be removed from this Earth's timeline~~ things in my life.
+it is for that character to be removed from this Earth's timeline~~ things in my life???
 
 So I thought, why not just simulate my friends? I have money, time, and a draw towards the dubiously
 ethical, so why not use my powers for the good of... well, myself?
@@ -38,9 +38,9 @@ The best I could come up with is the following:
 ## The Dumping
 
 For all my (and other's) issues with Discord, I will give it to them that they have a pretty good API
-(barring some weird limitations here and there[^1]). We can't use their
-[search endpoint](https://docs.discord.com/developers/resources/message#search-guild-messages) unfortunately,
-as we require message context which would end up being a LOT of requests, so instead we just read the
+(barring some weird limitations here and there[^1]). We unfortunately can't use their
+[search endpoint](https://docs.discord.com/developers/resources/message#search-guild-messages),
+as we require message context which would end up being a LOT of individual requests, so instead we just read the
 history of a select few channels.
 
 ```ts
@@ -101,7 +101,7 @@ for (const userId of USER_IDS) {
 ## The Hardware
 
 This was the tricky part, because as much as I love building computers, I had no idea where to start with this.
-We all know RAM and GPUs cost more than my car these days, but I also knew that there had to be *some way*
+We all know RAM and GPUs cost more than a car these days, but I also knew that there had to be *some way*
 to do this "cheap".
 
 After a lot of research, a couple Facebook Marketplace sleuth-sessions, and a Redbull or two, I found it...
@@ -125,7 +125,7 @@ as well. This is all according to [Wikipedia](https://en.wikipedia.org/wiki/SXM_
 anything.
 
 What makes the V100 uniquely qualified to be one of the best bang-for-buck GPUs is that... well, nothing
-consumer-facing supports SXM2. I know damn well your motherboard doesn't. Don't lie to me.
+consumer-facing supports SXM2. I know damn well your motherboard doesn't, don't lie to me.
 
 This means that, by themselves, you can get ahold of a SXM2 V100 (16GB) for as low as $200 CAD[^2]!!! It's
 difficult to quantify, but that's $200 CAD for a GPU *roughly similar* to the RTX 3090 (disregarding the
@@ -156,8 +156,8 @@ to accommodate these cards, so it took a bit to figure out. Turns out these thin
 power (which makes sense, they take two
 PCIe power connectors!), and they also require some pretty decent PCIe specs motherboard-wise.
 
-Because this server doesn't need to be terribly CPU-performant, I ended up buying a Ryzen 5 2600 (which
-was a minor mistake, you'll know why in a second). Alongside that, an ASUS PRIME X370-PRO, for its many
+Because this server doesn't need to be terribly CPU-performant, I ended up buying a used Ryzen 5 2600 (which
+was a minor mistake, you'll know why in a second). Housing that is a used ASUS PRIME X370-PRO for its many
 PCIe slots and lanes. I was able to find 16GB DDR4 for $110, which hurt my soul a little bit, and the only
 new parts I bought were a MSI MAG A750GLS[^3] and a Phanteks XT Pro to shove everything in.
 
@@ -166,13 +166,19 @@ new parts I bought were a MSI MAG A750GLS[^3] and a Phanteks XT Pro to shove eve
 The setup was, frankly, a pain in the ass. Upon installing Fedora, I noticed only one of the two cards
 was being recognized, even though both fans would spin (and they have a cool screen on them that displays
 a number, dunno what it's for though). It took 2 hours of BIOS back-and-forth to get them both to show up,
-including forcing the PCIe Gen speed, ensuring ReBAR and Above 4G Decoding was on, and turning CSM off. I do
+including forcing the PCIe slot speed, ensuring ReBAR and Above 4G Decoding was on, and turning CSM off. I do
 not know which of those steps were required and which were not, but eventually I had both GPUs listed in
 `nvidia-smi` and `fastfetch`!
 
 ![`fastfetch` output on the server](./fetch.png)
 
-The reason it took so long is that I had **zero display output**. There is no iGPU and there are server
+<sup>
+  Did you know you can have your Linux system boot terminal-only? It helped with the boot times, I would
+  be able to reach SSH faster than before I disabled the GUI.
+  <a href="https://discussion.fedoraproject.org/t/fedora-40-boot-to-terminal/141291/4">Here's how</a>.
+</sup>
+
+The reason it took so long is that I had **zero display output**. There is no iGPU and these are server
 GPUs, which meant I had to drive to a friends house to get their old GTX 1060 to have display output for the
 BIOS, then save it, then shut it down and switch the GPUs, then turn it on again. Every boot.
 
@@ -327,7 +333,7 @@ command that takes a user and a message to "send" "them".
 ## The Results
 
 After all of this money[^6] and effort spent, what did I get out of it? Frankly, all I got
-was a gaggle of lobotmites.
+was a gaggle of lobotomites.
 
 <img style="width: 100%;" src="./ex1.png" />
 
@@ -365,6 +371,17 @@ No, it was worth it because they hated it.
 !["This is terrifying"](./terrifying.png)
 
 !["That scary"](./scary.png)
+
+## Stats for the Curious
+
+| Metric | Amount |
+|-|-|
+| Total Cost | ~$1,329.27 |
+| Tok/s | ~30.2 |
+| VRAM Usage | ~29,550 MB / 29.5 GB |
+| Bot Messages (so far) | 732 |
+| Friends Lost | 6 |
+| Friends Gained | ∞ |
 
 [^1]: for [orbolay](https://github.com/SpikeHD/Orbolay) (for example), the
 [RPC transport](https://docs.discord.food/topics/rpc#rpc-events)
