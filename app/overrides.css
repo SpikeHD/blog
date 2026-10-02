@@ -47,7 +47,7 @@
 }
 
 .markdown code {
-  @apply rounded-sm px-1 bg-background-secondary;
+  @apply rounded-sm text-sm px-1 bg-background-secondary;
 }
 
 .markdown blockquote {

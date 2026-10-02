@@ -38,6 +38,10 @@ body {
   transform: translateZ(0);
 }
 
+del {
+  opacity: 60%;
+}
+
 @keyframes mulShdSpin {
   0%,
   100% {
