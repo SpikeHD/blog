@@ -33,7 +33,7 @@ The best I could come up with is the following:
 3. Host a small LLM on it
 4. Use a Discord bot to read the current conversation, select who should respond, and feed the LLM
   an assortment of example messages before asking it what said friend would say as a response
-5. Send the message using a websocket, in order to replicate their profile picture and username
+5. Send the message using a webhook, in order to replicate their profile picture and username
 
 ## The Dumping
 
@@ -179,7 +179,7 @@ not know which of those steps were required and which were not, but eventually I
 </sup>
 
 The reason it took so long is that I had **zero display output**. There is no iGPU and these are server
-GPUs, which meant I had to drive to a friends house to get their old GTX 1060 to have display output for the
+GPUs, which meant I had to drive to a friend's house to get their old GTX 1060 to have display output for the
 BIOS, then save it, then shut it down and switch the GPUs, then turn it on again. Every boot.
 
 Once this was working properly, I bought a NanoKVM[^4] so I could remotely turn it on and off, and because
@@ -192,7 +192,7 @@ but apart from that I wasn't familiar with the tooling and ecosystem.
 
 Originally, I tried running regular Qwen 4B and 9B[^5] models using the
 [1cat-vllm fork](https://github.com/1CatAI/1Cat-vLLM). This fork offers specific V100 support for things like
-"flash attention" ([heres](https://gordicaleksa.medium.com/eli5-flash-attention-5c44017022ad) a seemingly good
+"flash attention" ([here's](https://gordicaleksa.medium.com/eli5-flash-attention-5c44017022ad) a seemingly good
 explainer on that, I won't pretend I understand it). This worked well with a bit of fiddling, but I was limited
 to Qwen official releases, and I had been reading up on quantized models.
 
@@ -363,7 +363,7 @@ Some more assorted examples:
 
 ## Was it Worth it?
 
-Absolutely. Not even because I not have a decent server for GPU workloads, nor because I learned a lot about LLMs and hardware and
+Absolutely. Not even because I now have a decent server for GPU workloads, nor because I learned a lot about LLMs and hardware and
 got to program a neat little bot.
 
 No, it was worth it because they hated it.
