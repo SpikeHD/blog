@@ -1,8 +1,12 @@
-import { OnnxWebRuntime, PhonemizeWebRuntime, PiperWebEngine } from 'piper-tts-web'
+export {}
+
+type PiperModule = typeof import('piper-tts-web')
+type PiperWebEngine = InstanceType<PiperModule['PiperWebEngine']>
 
 const VOICE = 'en_US-hfc_male-medium'
 const SPEAKER = 0
 const MAX_CHUNK_LENGTH = 400
+const PIPER_MODULE_URL = '/vendor/piper-tts-web.js'
 
 interface Message {
   type: 'speak' | 'next'
@@ -15,9 +19,18 @@ interface AudioChunk {
 }
 
 let tts: PiperWebEngine | null = null
+let piperModule: Promise<PiperModule> | null = null
 let chunks: string[] = []
 let nextIndex = 0
 let pending: Promise<AudioChunk | null> | null = null
+
+function loadPiper(): Promise<PiperModule> {
+  if (!piperModule) {
+    const url = PIPER_MODULE_URL
+    piperModule = import(/* turbopackIgnore: true */ /* webpackIgnore: true */ url) as Promise<PiperModule>
+  }
+  return piperModule
+}
 
 function decodeWav(buffer: ArrayBuffer): AudioChunk {
   const view = new DataView(buffer)
@@ -67,6 +80,7 @@ function splitIntoChunks(text: string): string[] {
 async function init() {
   if (tts) return
 
+  const { OnnxWebRuntime, PhonemizeWebRuntime, PiperWebEngine } = await loadPiper()
   const origin = self.location.origin
 
   tts = new PiperWebEngine({
@@ -85,8 +99,17 @@ async function generate(index: number): Promise<AudioChunk> {
 function prepareNext(): Promise<AudioChunk | null> | null {
   if (nextIndex >= chunks.length) return null
   const index = nextIndex++
-  pending = generate(index)
-  return pending
+  const promise = generate(index)
+  promise.catch(() => {})
+  pending = promise
+  return promise
+}
+
+function postError(error: unknown) {
+  const message = error instanceof Error
+    ? `${error.message}\n${error.stack ?? ''}`
+    : String(error)
+  self.postMessage({ type: 'error', message })
 }
 
 self.onmessage = async (evt) => {
@@ -97,14 +120,19 @@ self.onmessage = async (evt) => {
     nextIndex = 0
   }
 
-  const result = await (pending ?? prepareNext())
-  pending = null
+  try {
+    const result = await (pending ?? prepareNext())
+    pending = null
 
-  if (!result) {
-    self.postMessage({ type: 'done' })
-    return
+    if (!result) {
+      self.postMessage({ type: 'done' })
+      return
+    }
+
+    self.postMessage({ type: 'audio', ...result })
+    prepareNext() // pre-generate the following chunk while this one plays
+  } catch (error) {
+    pending = null
+    postError(error)
   }
-
-  self.postMessage({ type: 'audio', ...result })
-  prepareNext() // pre-generate the following chunk while this one plays
 }

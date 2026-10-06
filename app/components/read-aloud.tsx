@@ -114,9 +114,15 @@ export default function ReadAloud() {
     if (sourceRef.current) playBuffer(currentBufferRef.current!, elapsed())
   }
 
-  useEffect(() => {
-    const worker = new Worker(new URL('../workers/tts-worker.ts', import.meta.url))
-    workerRef.current = worker
+  const fail = (message?: string) => {
+    if (message) console.error('Read-aloud worker failed:', message)
+    setStatus('error')
+  }
+
+  const createWorker = () => {
+    const worker = new Worker(new URL('../workers/tts-worker.ts', import.meta.url), {
+      type: 'module',
+    })
 
     worker.onmessage = (evt) => {
       const { type, audio, sampleRate, message } = evt.data
@@ -131,22 +137,36 @@ export default function ReadAloud() {
           setStatus('ready')
           break
         case 'error':
-          setStatus('error')
-          console.error(message)
+          fail(message)
           break
       }
     }
 
-    return () => {
-      stop()
+    worker.onerror = (evt) => {
+      fail(evt.message)
       worker.terminate()
       workerRef.current = null
     }
+
+    worker.onmessageerror = () => fail('Worker received an unreadable message')
+
+    return worker
+  }
+
+  useEffect(() => {
+    const worker = createWorker()
+    workerRef.current = worker
+
+    return () => {
+      stop()
+      workerRef.current?.terminate()
+      workerRef.current = null
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const grabDocumentAndSpeak = () => {
     if (status === 'speaking' || status === 'paused') return
-    if (!workerRef.current) return
 
     getContext() // create/resume the AudioContext within the user gesture
 
@@ -160,7 +180,9 @@ export default function ReadAloud() {
 
     reset()
     setStatus('loading')
-    workerRef.current.postMessage({ type: 'speak', text })
+    const worker = workerRef.current ?? createWorker()
+    workerRef.current = worker
+    worker.postMessage({ type: 'speak', text })
   }
 
   const icon =

@@ -2,6 +2,8 @@
 public/posts
 # this is generated on the fly
 public/rss.xml
+# staged from node_modules by scripts/copy-piper.mjs
+public/vendor
 
 # dependencies
 /node_modules

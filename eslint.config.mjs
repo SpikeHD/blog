@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored stuff
+    "public/vendor/**",
+    "public/onnx/**",
+    "public/piper/**",
   ]),
 ]);
 
